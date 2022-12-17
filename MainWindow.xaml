@@ -1,0 +1,81 @@
+﻿<Window x:Class="WpfApp12.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp12"
+        mc:Ignorable="d"
+        Loaded="Window_Loaded"
+        Title="Практическая 12" Height="458" Width="281" ResizeMode="NoResize" Foreground="White">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Menu Margin="1,0,0,395">
+            <MenuItem Header="Файл">
+                <MenuItem Header="Выход" ToolTip="Закрытие программы" Click="Exit_Click"/>
+            </MenuItem>
+            <MenuItem Header="Команды">
+                <MenuItem Header="Вывести" Click="ButtonСonclusion_Click"/>
+                <MenuItem Header="Найти S и P" Click="ButtonSP_Click"/>                
+            </MenuItem>
+            <MenuItem Header="Справка">
+                <MenuItem Header="О программе" Click="About_Click"/>
+            </MenuItem>
+        </Menu>
+        <StatusBar Margin="0,349,1,47">
+            <TextBlock x:Name="TaskNumber" Text="Задание 1, 2"></TextBlock>
+            <Separator></Separator>
+            <TextBlock x:Name="time" Text="9.28" ToolTip="Текущее время" ></TextBlock>
+            <Separator></Separator>
+            <TextBlock x:Name="data" Text="14.12.2022" ToolTip="Текущая дата" ></TextBlock>
+        </StatusBar>
+        <TabControl Margin="0,47,0,164">
+            <TabItem Header="Рассчёт S и P" Margin="4,-2,-41,0" ToolTip="Первое задание">
+                <Grid Background="#FFE5E5E5" Height="189">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <GroupBox Header="Исходные данные" Margin="43,-4,44,110">
+                        <Grid Height="65" Margin="2,0,-2,0">
+                            <TextBox x:Name="tbA" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" Height="17"/>
+                            <Label Content="Введите сторону квадрата" HorizontalAlignment="Left" VerticalAlignment="Top" Width="183" Margin="-1,-4,0,0"/>
+                        </Grid>
+                    </GroupBox>
+                    <Button x:Name="buttonSP" Content="Найти S и P" HorizontalAlignment="Center" Margin="0,82,0,0" VerticalAlignment="Top" Background="#FFFFEB07" Height="20" Width="92" Click="ButtonSP_Click"/>
+                    <GroupBox Header="Результат" Margin="43,99,44,10">
+                        <Grid Height="40">
+                            <TextBox x:Name="tbResult" IsReadOnly="True" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" Background="White" Height="37"/>
+                        </Grid>
+                    </GroupBox>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Перестановка чисел" Margin="42,-2,-48,0" ToolTip="Второе задание">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <GroupBox Header="Исходные данные" Margin="49,-4,44,118">
+                        <Grid Height="62">
+                            <TextBox x:Name="tbNumber" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="White" Height="16" Margin="0,27,0,0"/>
+                            <Label Content="Введите трёхзначное число" HorizontalAlignment="Left" Margin="-6,-1,0,0" VerticalAlignment="Top" Background="{x:Null}" Width="173"/>
+                        </Grid>
+                    </GroupBox>
+                    <Button x:Name="buttonСonclusion" Content="Вывести" HorizontalAlignment="Center" VerticalAlignment="Top" Width="93" Background="#FFFDEE4B" Height="20" Click="ButtonСonclusion_Click" Margin="0,87,0,0"/>
+                    <GroupBox Header="Результат" Margin="52,108,44,0">
+                        <Grid Height="64">
+                            <TextBox x:Name="tbResult1" IsReadOnly="True" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="139" Background="White" Height="34" Margin="0,5,0,0"/>
+                        </Grid>
+                    </GroupBox>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Border BorderBrush="Black" BorderThickness="1" Margin="23,270,18,92">
+            <Grid Margin="9,0,9,0" Background="White">
+                <Button x:Name="exit" Content="Выход" HorizontalAlignment="Left" Margin="108,0,0,0" VerticalAlignment="Center" Background="#FFC35252" Height="40" Width="96" Click="Exit_Click"/>
+                <Button x:Name="about" Content="О программе" HorizontalAlignment="Left" Margin="1,0,0,0" VerticalAlignment="Center" Background="#FF66E045" Height="40" Width="96" Click="About_Click"/>
+            </Grid>
+        </Border>
+
+    </Grid>
+</Window>
